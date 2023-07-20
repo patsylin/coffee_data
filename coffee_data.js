@@ -95,7 +95,7 @@ function drinks5Under(){
 }
 
 const drinks5AndUnder = drinks5Under();
-
+222
 console.log(drinks5AndUnder);
 
 // // 4. Print an array of drinks that are priced at an even number.
