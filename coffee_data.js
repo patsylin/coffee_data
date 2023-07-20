@@ -69,3 +69,85 @@ function cleanCoffeeMenu() {
 }
 cleanCoffeeMenu();
 console.log(coffeeMenu);
+
+// 2. Print an array of all the drinks on the menu.
+
+function allTheDrinks(){
+    const drinkNames = coffeeMenu.map((currentVal) =>{
+        return currentVal.name;
+    });
+    return drinkNames;
+}
+
+const allDrinks = allTheDrinks();
+console.log(allDrinks);
+
+// // 3. Print an array of drinks that cost 5 and under.
+
+function drinks5Under(){
+    let newArr = [];
+    for(const element of coffeeMenu){
+        if(element.price <= 5){
+            newArr.push(element.name);
+        }
+    }
+    return newArr;
+}
+
+const drinks5AndUnder = drinks5Under();
+
+console.log(drinks5AndUnder);
+
+// // 4. Print an array of drinks that are priced at an even number.
+function drinksEven(){
+    let result = [];
+    coffeeMenu.forEach(el =>{
+        if(el.price % 2 === 0){
+            result.push(el.name);
+        }
+    });
+    return result;
+}
+
+const drinksEvenNum = drinksEven();
+
+console.log(drinksEvenNum);
+
+// // 5. Print the total if you were to order one of every drink.
+function everyDrink(){
+    let total = 0;
+    for(const ele of coffeeMenu){
+        total += ele.price;
+    }
+    return total;
+}
+
+const oneOfEvery = everyDrink();
+console.log(oneOfEvery);
+// // 6. Print an array with all the drinks that are seasonal.
+
+function allSeasonal(){
+    let arr = [];
+    coffeeMenu.forEach(el =>{
+    if(el.seasonal === true){
+        arr.push(el.name);
+    }
+    });
+    return arr;
+}
+
+const seasonalOnly = allSeasonal();
+console.log(seasonalOnly);
+
+// // 7. Print all the seasonal drinks with the words "with imported beans" after the item name. For example: "affogato with imported beans".
+
+function addingBeans(){
+    let lastArr = [];
+    for(const el of coffeeMenu){
+        lastArr.push(`${el.name} with imported beans`)
+    }
+    return lastArr;
+}
+
+const allDrinksWithBeans = addingBeans();
+console.log(allDrinksWithBeans);
